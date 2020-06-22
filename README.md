@@ -1,8 +1,5 @@
-[![Download](https://api.bintray.com/packages/conan-community/conan/muparser%3Aconan/images/download.svg) ](https://bintray.com/conan-community/conan/muparser%3Aconan/_latestVersion)
-[![Build Status Travis](https://travis-ci.org/conan-community/conan-muparser.svg)](https://travis-ci.org/conan-community/conan-muparser)
-[![Build Status AppVeyor](https://ci.appveyor.com/api/projects/status/github/conan-community/conan-muparser?svg=true)](https://ci.appveyor.com/project/ConanCIintegration/conan-muparser)
 
-## Conan package recipe for [*muparser*](http://beltoforion.de/article.php?a=muparser)
+## Conan package recipe for [*muparser*](https://beltoforion.de/en/muparser/)
 
 Fast Math Parser Library
 
