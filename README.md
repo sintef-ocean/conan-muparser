@@ -1,30 +1,26 @@
+[![GCC Conan](https://github.com/sintef-ocean/conan-muparser/workflows/GCC%20Conan/badge.svg)](https://github.com/sintef-ocean/conan-muparser/actions?query=workflow%3A"GCC+Conan")
+[![Clang Conan](https://github.com/sintef-ocean/conan-muparser/workflows/Clang%20Conan/badge.svg)](https://github.com/sintef-ocean/conan-muparser/actions?query=workflow%3A"Clang+Conan")
+[![MSVC Conan](https://github.com/sintef-ocean/conan-muparser/workflows/MSVC%20Conan/badge.svg)](https://github.com/sintef-ocean/conan-muparser/actions?query=workflow%3A"MSVC+Conan")
+[![Download](https://api.bintray.com/packages/sintef-ocean/conan/muparser%3Asintef/images/download.svg)](https://bintray.com/sintef-ocean/conan/muparser%3Asintef/_latestVersion)
 
 ## Conan package recipe for [*muparser*](https://beltoforion.de/en/muparser/)
 
 Fast Math Parser Library
 
-The packages generated with this **conanfile** can be found on [Bintray](https://bintray.com/conan-community/conan/muparser%3Aconan).
-
-
-## Issues
-
-If you wish to report an issue or make a request for a package, please do so here:
-
-[Issues Tracker](https://github.com/conan-community/community/issues)
-
+The packages generated with this **conanfile** can be found on [Bintray](https://bintray.com/sintef-ocean/conan/muparser%3Asintef).
 
 ## For Users
 
 ### Basic setup
 
-    $ conan install muparser/2.2.6@conan/stable
+    $ conan install muparser/2.3.2@sintef/stable
 
 ### Project setup
 
 If you handle multiple dependencies in your project is better to add a *conanfile.txt*
 
     [requires]
-    muparser/2.2.6@conan/stable
+    muparser/2.3.2@sintef/stable
 
     [generators]
     cmake
@@ -54,7 +50,7 @@ The following command both runs all the steps of the conan file, and publishes t
 
 Conan Community has its own Bintray repository, however, we are working to distribute all package in the Conan Center:
 
-    $ conan remote add conan-center "https://conan.bintray.com"
+    $ conan remote add sintef https://api.bintray.com/conan/sintef-ocean/conan
 
 
 ## Conan Recipe License
