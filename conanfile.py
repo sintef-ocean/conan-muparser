@@ -4,14 +4,14 @@ from conans import ConanFile, tools, CMake
 
 class MuparserConan(ConanFile):
     name = "muparser"
-    version = "2.2.6"
+    version = "2.3.2"
     description = "Fast Math Parser Library"
     topics = ("conan", "muparser", "math", "parser")
-    url = "https://github.com/conan-community/conan-muparser"
-    homepage = "http://beltoforion.de/article.php?a=muparser"
-    author = "Conan Community"
+    url = "https://github.com/sintef-ocean/conan-muparser"
+    homepage = "https://beltoforion.de/en/muparser"
+    author = "Jarle Ladstein jarle.ladstein@sintef.no"
     license = "MIT"
-    exports = ["LICENSE.md"]
+    exports = ["LICENSE"]
     generators = "cmake"
 
     settings = "os", "arch", "compiler", "build_type"
@@ -25,19 +25,20 @@ class MuparserConan(ConanFile):
             del self.options.fPIC
 
     def source(self):
-        tools.get("https://github.com/beltoforion/{}/archive/v{}.zip".format(self.name, self.version),
-                  sha256="daf4a937abdc33b361d4a2fbc79bf311d5486ebc87c56596130e295db1302303")
+        tools.get("https://github.com/beltoforion/muparser/archive/v{}.zip".format(self.version),
+                  sha256="ef303e5b842fa6e755ca7d4622ac1fd50a1f2e3df9069641c4d6eb5014cfe451")
         os.rename(self.name + "-" + self.version, self._source_subfolder)
 
         tools.replace_in_file(os.path.join(self._source_subfolder, 'CMakeLists.txt'),
                               'project(muParserProject)',
                               'project(muParserProject)\n'
-                              'include(${CMAKE_CURRENT_SOURCE_DIR}/../conanbuildinfo.cmake)\n'
+                              'include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)\n'
                               'conan_basic_setup()')
 
     def _configure_cmake(self):
         cmake = CMake(self)
         cmake.definitions["ENABLE_SAMPLES"] = False
+        cmake.definitions["ENABLE_OPENMP"] = False
         cmake.configure(source_folder=self._source_subfolder)
         return cmake
 
