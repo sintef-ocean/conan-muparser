@@ -10,7 +10,7 @@ class MuparserConan(ConanFile):
     url = "https://github.com/sintef-ocean/conan-muparser"
     homepage = "https://beltoforion.de/en/muparser"
     author = "Jarle Ladstein jarle.ladstein@sintef.no"
-    license = "MIT"
+    license = "BSD 2-Clause"
     exports = ["LICENSE"]
     generators = "cmake"
 
